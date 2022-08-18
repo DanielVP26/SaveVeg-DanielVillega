@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+* {
+	font-family: roboto;
+	padding: 0px;
+	margin: 0px;
+}
+body{
+	background-color: #F2ECE1;
+}
+#container{
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 2fr 1fr;
+	grid-template-areas: 
+	"header"
+	"main"
+	"footer";
+}
+.headerGeneral{
+	grid-area: header;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.5rem 0 1.5rem;
+	border:solid;
+	background-color: #92BA92;
+}
+.links_derecha>li {
+	margin-left: 1rem;
+	padding: 0.3rem;
+	border-radius: 50%;
+	background-color: #92BA92;
+
+}
+.links_derecha>li:hover{
+	background-color: #A7DFA7;
+
+}
+#menu__header ul{
+	display: flex;
+	list-style: none;
+}
+#main{
+	grid-area: main;
+}
+.card{
+	border:solid;
+	display: flex;
+	height: 12rem;
+}
+.card__img{	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 1em;
+}
+.card>div>img{
+	padding: 0.5rem;
+	width: 8rem;
+	height: 8rem;
+	border:solid;
+	border-radius: 10px;
+	border-color: #78938A;
+}
+.card__description{
+	display: flex;
+	flex-direction: column;
+	margin-top: 2rem;
+	margin-right: 1em;
+    align-items: flex-start;
+}
+.card__compra{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1em;
+}
+.card__price{
+	padding-bottom: 3rem;
+	font-weight: bolder;
+	font-style: italic;
+}
+.card__action{
+	width: 4rem;
+	height: 2rem;
+	justify-content: center;
+}
+footer{
+	grid-area: footer;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	border: solid;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #78938A;
+}
+
+@media screen and (max-width: 480px){
+	.card{
+		height: 14rem;
+	}
+	.card__description{
+		margin-top: 1.4em;
+	}
+	.card>div>img{
+		padding: 0;
+	}
+}
+
+/*PAGINA DE PERFIL*/
+#contenedorPerfil{
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: 
+	"imagePerfil principalPerfil"
+	"botoneraPerfil principalPerfil";
+	border: 1px solid;
+}
+#contenedorPerfil>div{
+	border:1px solid;
+}
+#imagePerfil{
+	grid-area: imagePerfil;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+#imagePerfil>img{
+	margin: 1rem;
+	border-radius: 50%;
+	border: 2px solid;
+}
+#botoneraPerfil{
+	grid-area: botoneraPerfil;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.botoneraPerfil__link{
+	width: 100%;
+}
+.botoneraPerfil__link>button{
+	width: 100%;
+}
+.botoneraPerfil__button{
+	padding: 5px;
+	border-color: gray ;
+	border-radius: 5px;
+	font-size: 1rem;
+}
+.botoneraPerfil__button:hover{
+	font-size: 1.5rem;
+}
+#principalPerfil{
+	grid-area: principalPerfil;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+#micuenta__title{
+	height: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6rem;
+}
+.formPerfil {  
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "nombreForm apellidoForm"
+    "correoForm telefonoForm"
+    "nacimientoForm .";
+}
+.perfilForm{
+	padding: 4rem;
+}
+
+.nombreForm{
+ grid-area: nombreForm;
+ justify-self: end;
+ margin-right: 2rem;
+ }
+
+.apellidoForm{
+ grid-area: apellidoForm;
+ margin-left: 2rem;
+}
+
+.correoForm{
+ grid-area: correoForm;
+ justify-self: end;
+ margin-right: 2rem;
+}
+
+.telefonoForm{
+ grid-area: telefonoForm;
+ margin-left: 2rem;
+}
+
+.nacimientoForm{
+ grid-area: nacimientoForm;
+ justify-self: end;
+ margin-right: 2rem;
+}
+
+.buttonForm{
+	margin-top: 3rem;
+}
+
+.form__input{
+	border-radius: 1em;
+	border: solid 1px #ccc;
+	padding: 0.6rem;
+	width: 13rem;
+}
+.form__input:focus{
+	border-color: #9FCF9F;
+}
+.btn{
+	display: flex;
+	margin: 0 auto;
+	border-radius: 5px;
+	padding: 0.5rem;
+	text-decoration: none;
+	text-shadow: 0 1px 0 ;
+	box-shadow: 0 1px 1px #799C79;
+	color: white;
+	background-color: #799C79;
+}
+.btn:hover{
+	background-color: #627C62
+}
+@media screen and (max-width: 480px){
+	.formPerfil{
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(5, 1fr);
+		gap:1rem 0;
+		grid-template-areas:
+		"nombreForm"
+		"apellidoForm"
+		"telefonoForm"
+		"correoForm"
+		"nacimientoForm";
+	}
+	.formPerfil>div{
+		margin:0;
+		justify-self: center;
+	}
+	.perfilForm{
+		padding: 0;
+	}
+	#micuenta__title{
+		padding: 0;
+	}
+	.buttonForm{
+		margin:2rem;
+	}
+	.form__input{
+		width: 11rem;
+	}
+}
+
+/*PAGINA DE OFERTAS*/
+
+.containerOfertas { 
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 2fr 1fr;
+	gap: 5px 0px;
+	grid-auto-flow: row;
+	grid-template-areas:
+	  "headerOfertas headerOfertas headerOfertas"
+	  "main main main"
+	  "footer footer footer";
+}
+.headerOfertas{
+	grid-area: headerOfertas;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.5rem 0 1.5rem;
+	border:solid;
+	background-color: #92BA92;
+}
+
+.footer{ 
+	grid-area: footer;
+}
+
+.main {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 0.4fr 1.7fr 0.9fr; 
+  gap: 10px 0px; 
+  grid-template-areas: 
+    ". . . . ."
+    ". ofertaEncabezado ofertaEncabezado ofertaEncabezado ."
+    ". ofertas ofertas ofertas ."; 
+  grid-area: main; 
+}
+
+.ofertaEncabezado { 
+	grid-area: ofertaEncabezado; 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#content__encabezado{
+	width: 99%;
+	text-align: center;
+	background-color: #b92c2c;
+	border:solid;
+}
+#content__main{
+	border:solid;
+	border-top: 0;
+}
+
+.ofertas { 
+	grid-area: ofertas;
+	display: flex;
+	margin-top: 3rem;
+	justify-content: space-evenly;  
+}
+
+.ofertas>div>img{
+	border: 3px solid;
+	border-radius: 5px;
+	border-color: #999;
+	width: 8rem;
+	height: 8rem;
+	padding: 1em;
+}
+@media screen and (max-width: 480px){
+	.main{
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 0.1fr 0.8fr 0.4fr;
+  gap:0px 0px;
+  grid-template-areas: 
+    ". . . "
+    "ofertaEncabezado ofertaEncabezado ofertaEncabezado"
+    "ofertas ofertas ofertas";
+	}
+	.ofertaEncabezado{
+		justify-content: center;
+	}
+	.ofertas{
+		flex-direction: column;
+		margin-left: 3rem;
+		margin-top: 0;
+	}
+	.ofertas>div{
+		margin-bottom: 1rem;
+	}
+}
+
+/*PAGINA DE CONTACTO*/
+
+.containerContacto{
+	display: grid; 
+	height: 100vh;
+	grid-auto-rows: 1fr; 
+	grid-template-columns: 1fr 1fr 1fr; 
+	grid-template-rows: 1fr 1.5fr 2fr 1fr; 
+	grid-template-areas: 
+    	"headerContacto headerContacto headerContacto"
+    	"encabezado encabezado encabezado"
+    	"form form form"
+    	"footer footer footer"; 
+}
+.headerContacto{
+	grid-area: headerContacto;
+ 	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.5rem 0 1.5rem;
+	border:solid;
+	background-color: #92BA92; 
+}
+.encabezadoContacto{
+	grid-area: encabezado;
+	font-family: roboto; 
+	background-image: url("https://img.freepik.com/fotos-premium/vista-superior-textura-madera-pino-rojo-madera-natural-fondo_7636-1684.jpg?w=2000");
+	background-repeat: no-repeat;
+	display: flex;
+	height: 100%;
+	margin-bottom: 4rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.form {  
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "nombreForm apellidoForm"
+    "correoForm edadForm"
+    "razonForm .";
+}
+
+.nombreForm{
+ grid-area: nombreForm;
+ justify-self: end;
+ margin-right: 2rem;
+ }
+
+.apellidoForm{
+ grid-area: apellidoForm;
+ margin-left: 2rem;
+}
+
+.correoForm{
+ grid-area: correoForm;
+ justify-self: end;
+ margin-right: 2rem;
+}
+
+.edadForm{
+ grid-area: edadForm;
+ margin-left: 2rem;
+}
+
+.razonForm{
+ grid-area: razonForm;
+ justify-self: end;
+ margin-right: 2rem;
+}
+
+.buttonForm{
+	margin-top: 3rem;
+}
+
+.form__input{
+	border-radius: 1em;
+	border: solid 1px #ccc;
+	padding: 0.6rem;
+	width: 13rem;
+}
+.form__input:focus{
+	border-color: #9FCF9F;
+}
+.formContacto{
+	grid-area: form;
+	padding: 4rem;
+}
+.footer{
+	grid-area: footer; 
+}
+@media screen and (max-width: 480px){
+	.form{
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-areas: 
+		"nombreForm"
+		"apellidoForm"
+		"edadForm"
+		"correoForm"
+		"razonForm"
+	}
+	.form>div{
+		margin: 0;
+		justify-self: center;
+	}
+	.form__input{
+		width: 11rem;
+	}
+}
+
+/*PAGINA DE CARRITO*/
+
+.container {  
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "headerCarrito headerCarrito headerCarrito"
+    "mainCarrito mainCarrito mainCarrito"
+    ". . pagarCarrito";
+}
+
+.headerCarrito { 
+	grid-area: headerCarrito; 
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 2rem;
+	padding: 1rem 1.5rem 0 1.5rem;
+	border:solid;
+	border-radius: 1em;
+}
+.linksCarrito>li {
+	margin-left: 1rem;
+	padding: 0.3rem;
+	border-radius: 50%;
+}
+.linksCarrito>li:hover{
+	background-color: #CCD9CC;
+}
+.mainCarrito { 
+	grid-area: mainCarrito;
+	text-align: center;
+	margin-right: 2.3rem;
+	margin-left: 2.3rem;
+}
+.mainCarrito>table{ 
+width: 100%; 
+border-collapse: collapse;
+}
+.mainCarrito th, td {
+	border-radius: 2px;
+	border-bottom: 2px solid #999;
+}
+.mainCarrito img{
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+.pagarCarrito { 
+	grid-area: pagarCarrito; 
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 2rem;
+}
+
+.pagarCarrito>button{
+	width: 5rem;
+	height: 2rem;
+	background-color:#D9F8DA;
+}
+
+.pagarCarrito>button:hover{
+	width: 5.3rem;
+	height: 2.3rem;
+	background-color:#C9E7CA;
+}
+@media screen and (max-width: 480px){
+	.mainCarrito{
+		margin:0;
+	}
+	.mainCarrito>table{
+		display: block;
+		overflow: auto;
+	}
+	table th{
+		padding: 0 3rem;
+	}
+	td>button{
+		font-size: 2em;
+		border-radius: 0.3rem;
+		border:solid 1px;
+	}
+	td>button:hover{
+		font-size: 2.3em;
+		border-color: red;
+		;
+	}
+}
