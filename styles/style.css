@@ -3,9 +3,11 @@
 	font-family: roboto;
 	padding: 0px;
 	margin: 0px;
+	box-sizing: content-box;
 }
 body{
 	background-color: #F2ECE1;
+	line-height: normal;
 }
 #container{
 	display: grid;
@@ -44,7 +46,7 @@ body{
 #main{
 	grid-area: main;
 }
-.card{
+.cardVenta{
 	border:solid;
 	display: flex;
 	height: 12rem;
@@ -55,7 +57,7 @@ body{
 	justify-content: center;
 	margin: 0 1em;
 }
-.card>div>img{
+.cardVenta>div>img{
 	padding: 0.5rem;
 	width: 8rem;
 	height: 8rem;
@@ -112,13 +114,13 @@ footer{
 }
 
 @media screen and (max-width: 480px){
-	.card{
+	.cardVenta{
 		height: 14rem;
 	}
 	.card__description{
 		margin-top: 1.4em;
 	}
-	.card>div>img{
+	.cardVenta>div>img{
 		padding: 0;
 	}
 }
@@ -160,6 +162,7 @@ footer{
 }
 .botoneraPerfil__link>button{
 	width: 100%;
+	box-sizing: border-box;
 }
 .botoneraPerfil__button{
 	padding: 5px;
@@ -318,7 +321,7 @@ footer{
 .main {
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 0.4fr 1.7fr 0.9fr; 
+  grid-template-rows: 0.4fr 2fr 0.9fr; 
   gap: 10px 0px; 
   grid-template-areas: 
     ". . . . ."
@@ -349,6 +352,7 @@ footer{
 	display: flex;
 	margin-top: 3rem;
 	justify-content: space-evenly;  
+	align-items: center;
 }
 
 .ofertas>div>img{
@@ -363,7 +367,7 @@ footer{
 	.main{
   grid-template-columns: 1fr 1fr 1fr; 
   grid-template-rows: 0.1fr 0.8fr 0.4fr;
-  gap:0px 0px;
+  gap:2em 0px;
   grid-template-areas: 
     ". . . "
     "ofertaEncabezado ofertaEncabezado ofertaEncabezado"
@@ -468,9 +472,6 @@ footer{
 	padding: 0.6rem;
 	width: 13rem;
 }
-.form__input:focus{
-	border-color: #9FCF9F;
-}
 .formContacto{
 	grid-area: form;
 	padding: 4rem;
@@ -500,7 +501,7 @@ footer{
 
 /*PAGINA DE CARRITO*/
 
-.container {  
+.containerGeneral {  
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr;
