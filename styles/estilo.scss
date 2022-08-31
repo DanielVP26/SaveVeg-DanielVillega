@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-* {
-	font-family: roboto;
-	padding: 0px;
-	margin: 0px;
-	box-sizing: content-box;
+*{
+    font-family: roboto;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: content-box;
 }
 body{
 	background-color: #F2ECE1;
@@ -28,42 +28,29 @@ body{
 	border:solid;
 	background-color: #92BA92;
 }
-.links_derecha>li {
-	margin-left: 1rem;
-	padding: 0.3rem;
-	border-radius: 50%;
-	background-color: #92BA92;
-
-}
-.links_derecha>li:hover{
-	background-color: #A7DFA7;
-
-}
-#menu__header ul{
-	display: flex;
-	list-style: none;
-}
 #main{
-	grid-area: main;
+    grid-area: main;
 }
 .cardVenta{
 	border:solid;
 	display: flex;
 	height: 12rem;
+    div {
+        img{
+            padding: 0.5rem;
+            width: 8rem;
+            height: 8rem;
+            border:solid;
+            border-radius: 10px;
+            border-color: #78938A;
+        }
+    }
 }
 .card__img{	
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin: 0 1em;
-}
-.cardVenta>div>img{
-	padding: 0.5rem;
-	width: 8rem;
-	height: 8rem;
-	border:solid;
-	border-radius: 10px;
-	border-color: #78938A;
 }
 .card__description{
 	display: flex;
@@ -92,10 +79,10 @@ body{
   border-color: #92BA92;
   transition: all 1s ease;
   position: relative;
-}
-.botonAnim:hover {
-  background: #92BA92;
-  color: #fff !important;
+  &:hover{
+    background: #92BA92;
+    color: #fff !important;
+  }
 }
 .card__action{
 	width: 4rem;
@@ -116,15 +103,16 @@ footer{
 @media screen and (max-width: 480px){
 	.cardVenta{
 		height: 14rem;
+        div{
+            img{
+                padding: 0px;
+            }
+        }
 	}
 	.card__description{
 		margin-top: 1.4em;
 	}
-	.cardVenta>div>img{
-		padding: 0;
-	}
 }
-
 /*PAGINA DE PERFIL*/
 #contenedorPerfil{
 	display: grid;
@@ -135,9 +123,9 @@ footer{
 	"imagePerfil principalPerfil"
 	"botoneraPerfil principalPerfil";
 	border: 1px solid;
-}
-#contenedorPerfil>div{
-	border:1px solid;
+    >div{
+        border: 1px solid;
+    }
 }
 #imagePerfil{
 	grid-area: imagePerfil;
@@ -145,11 +133,11 @@ footer{
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-}
-#imagePerfil>img{
-	margin: 1rem;
-	border-radius: 50%;
-	border: 2px solid;
+    img{
+        margin: 1rem;
+        border-radius: 50%;
+        border: 2px solid;
+    }
 }
 #botoneraPerfil{
 	grid-area: botoneraPerfil;
@@ -159,19 +147,19 @@ footer{
 }
 .botoneraPerfil__link{
 	width: 100%;
-}
-.botoneraPerfil__link>button{
-	width: 100%;
-	box-sizing: border-box;
+    button{
+        width: 100%;
+	    box-sizing: border-box;
+    }
 }
 .botoneraPerfil__button{
 	padding: 5px;
 	border-color: gray ;
 	border-radius: 5px;
 	font-size: 1rem;
-}
-.botoneraPerfil__button:hover{
-	font-size: 1.5rem;
+    &:hover{
+        font-size: 1.5rem;
+    }
 }
 #principalPerfil{
 	grid-area: principalPerfil;
@@ -239,9 +227,9 @@ footer{
 	border: solid 1px #ccc;
 	padding: 0.6rem;
 	width: 13rem;
-}
-.form__input:focus{
-	border-color: #9FCF9F;
+    &:focus{
+        border-color: #9FCF9F;
+    }
 }
 .btn{
 	display: flex;
@@ -253,12 +241,12 @@ footer{
 	box-shadow: 0 1px 1px #799C79;
 	color: white;
 	background-color: #799C79;
-}
-.btn:hover{
-	background-color: #627C62;
-	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  -webkit-transform: translateY(-0.25em);
-          transform: translateY(-0.25em)
+    &:hover{
+        background-color: #627C62;
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        -webkit-transform: translateY(-0.25em);
+        transform: translateY(-0.25em)
+    }
 }
 @media screen and (max-width: 480px){
 	.formPerfil{
@@ -271,97 +259,93 @@ footer{
 		"telefonoForm"
 		"correoForm"
 		"nacimientoForm";
-	}
-	.formPerfil>div{
-		margin:0;
-		justify-self: center;
-	}
-	.perfilForm{
-		padding: 0;
-	}
-	#micuenta__title{
-		padding: 0;
-	}
-	.buttonForm{
-		margin:2rem;
-	}
-	.form__input{
-		width: 11rem;
-	}
+        div{
+            margin: 0px;
+            justify-self: center;
+        }
+    }
 }
-
+.perfilForm{
+    padding: 0;
+}
+#micuenta__title{
+    padding: 0;
+}
+.buttonForm{
+    margin:2rem;
+}
+.form__input{
+    width: 11rem;
+}
 /*PAGINA DE OFERTAS*/
 
 .containerOfertas { 
-	display: grid;
-	height: 100vh;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 2fr 1fr;
-	gap: 5px 0px;
-	grid-auto-flow: row;
-	grid-template-areas:
-	  "headerOfertas headerOfertas headerOfertas"
-	  "main main main"
-	  "footer footer footer";
+display: grid;
+height: 100vh;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 1fr 2fr 1fr;
+gap: 5px 0px;
+grid-auto-flow: row;
+grid-template-areas:
+  "headerOfertas headerOfertas headerOfertas"
+  "main main main"
+  "footer footer footer";
 }
 .headerOfertas{
-	grid-area: headerOfertas;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem 1.5rem 0 1.5rem;
-	border:solid;
-	background-color: #92BA92;
+grid-area: headerOfertas;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 1.5rem 0 1.5rem;
+border:solid;
+background-color: #92BA92;
 }
-
 .footer{ 
-	grid-area: footer;
+grid-area: footer;
 }
-
 .main {
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 0.4fr 2fr 0.9fr; 
-  gap: 10px 0px; 
-  grid-template-areas: 
-    ". . . . ."
-    ". ofertaEncabezado ofertaEncabezado ofertaEncabezado ."
-    ". ofertas ofertas ofertas ."; 
-  grid-area: main; 
+display: grid; 
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+grid-template-rows: 0.4fr 2fr 0.9fr; 
+gap: 10px 0px; 
+grid-template-areas: 
+". . . . ."
+". ofertaEncabezado ofertaEncabezado ofertaEncabezado ."
+". ofertas ofertas ofertas ."; 
+grid-area: main; 
 }
-
 .ofertaEncabezado { 
-	grid-area: ofertaEncabezado; 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+grid-area: ofertaEncabezado; 
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 #content__encabezado{
-	width: 99%;
-	text-align: center;
-	background-color: #b92c2c;
-	border:solid;
+width: 99%;
+text-align: center;
+background-color: #b92c2c;
+border:solid;
 }
 #content__main{
-	border:solid;
-	border-top: 0;
+border:solid;
+border-top: 0;
 }
-
 .ofertas { 
-	grid-area: ofertas;
-	display: flex;
-	margin-top: 3rem;
-	justify-content: space-evenly;  
-	align-items: center;
-}
-
-.ofertas>div>img{
-	border: 3px solid;
-	border-radius: 5px;
-	border-color: #999;
-	width: 8rem;
-	height: 8rem;
-	padding: 1em;
+grid-area: ofertas;
+display: flex;
+margin-top: 3rem;
+justify-content: space-evenly;  
+align-items: center;
+    div{
+        img{
+            border: 3px solid;
+            border-radius: 5px;
+            border-color: #999;
+            width: 8rem;
+            height: 8rem;
+            padding: 1em;
+        }
+    }
 }
 @media screen and (max-width: 480px){
 	.main{
@@ -380,12 +364,11 @@ footer{
 		flex-direction: column;
 		margin-left: 3rem;
 		margin-top: 0;
-	}
-	.ofertas>div{
-		margin-bottom: 1rem;
-	}
+        div {
+            margin-bottom: 1rem;
+        }
+    }
 }
-
 /*PAGINA DE CONTACTO*/
 
 .containerContacto{
@@ -488,68 +471,62 @@ footer{
 		"apellidoForm"
 		"edadForm"
 		"correoForm"
-		"razonForm"
+		"razonForm";
+        div{
+            margin: 0;
+            justify-self: center;
+        }
 	}
-	.form>div{
-		margin: 0;
-		justify-self: center;
-	}
-	.form__input{
+    .form__input{
 		width: 11rem;
 	}
 }
-
 /*PAGINA DE CARRITO*/
 
 .containerGeneral {  
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-auto-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
     "headerCarrito headerCarrito headerCarrito"
     "mainCarrito mainCarrito mainCarrito"
     ". . pagarCarrito";
 }
-
 .headerCarrito { 
-	grid-area: headerCarrito; 
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 2rem;
-	padding: 1rem 1.5rem 0 1.5rem;
-	border:solid;
-	border-radius: 1em;
-}
-.linksCarrito>li {
-	margin-left: 1rem;
-	padding: 0.3rem;
-	border-radius: 50%;
-}
-.linksCarrito>li:hover{
-	background-color: #CCD9CC;
+    grid-area: headerCarrito; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+    padding: 1rem 1.5rem 0 1.5rem;
+    border:solid;
+    border-radius: 1em;
 }
 .mainCarrito { 
 	grid-area: mainCarrito;
 	text-align: center;
 	margin-right: 2.3rem;
 	margin-left: 2.3rem;
-}
-.mainCarrito>table{ 
-width: 100%; 
-border-collapse: collapse;
-}
-.mainCarrito th, td {
+    table{
+        width: 100%; 
+        border-collapse: collapse;
+    }
+    th{
 	border-radius: 2px;
 	border-bottom: 2px solid #999;
-}
-.mainCarrito img{
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
+    }
+    td{
+	border-radius: 2px;
+	border-bottom: 2px solid #999;
+    }
+    img{
+        margin-top: 0.5rem;
+	    margin-bottom: 0.5rem;
+    }
 }
 .pagarCarrito { 
 	grid-area: pagarCarrito; 
@@ -558,38 +535,37 @@ border-collapse: collapse;
 	justify-content: flex-start;
 	align-items: center;
 	margin-top: 2rem;
-}
-
-.pagarCarrito>button{
-	width: 5rem;
-	height: 2rem;
-	background-color:#D9F8DA;
-}
-
-.pagarCarrito>button:hover{
-	width: 5.3rem;
-	height: 2.3rem;
-	background-color:#C9E7CA;
+    button{
+        width: 5rem;
+	    height: 2rem;
+	    background-color:#D9F8DA;
+        &:hover{
+            width: 5.3rem;
+	        height: 2.3rem;
+	        background-color:#C9E7CA;
+        }
+    }
 }
 @media screen and (max-width: 480px){
 	.mainCarrito{
 		margin:0;
+        table{
+            display: block;
+		    overflow: auto;
+            th{
+                padding: 0 3rem;
+            }
+        }
 	}
-	.mainCarrito>table{
-		display: block;
-		overflow: auto;
-	}
-	table th{
-		padding: 0 3rem;
-	}
-	td>button{
-		font-size: 2em;
-		border-radius: 0.3rem;
-		border:solid 1px;
-	}
-	td>button:hover{
-		font-size: 2.3em;
-		border-color: red;
-		;
-	}
+	td{
+        button{
+            font-size: 2em;
+		    border-radius: 0.3rem;
+		    border:solid 1px;
+            &:hover{
+                font-size: 2.3em;
+		        border-color: red;
+            }
+        }
+    }
 }
