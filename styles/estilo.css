@@ -34,6 +34,8 @@ body {
 }
 
 .cardVenta {
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   border: solid;
   display: flex;
   height: 12rem;
@@ -47,6 +49,46 @@ body {
   border-color: #78938A;
 }
 
+.cardVenta:nth-child(1) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.cardVenta:nth-child(2) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.cardVenta:nth-child(3) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+.cardVenta:nth-child(4) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .card__img {
   display: flex;
   align-items: center;
@@ -64,9 +106,9 @@ body {
 
 .card__compra {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin-right: 1em;
 }
 
@@ -98,18 +140,18 @@ body {
 
 footer {
   grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
   border: solid;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #78938A;
 }
 
 @media screen and (max-width: 480px) {
   .cardVenta {
-    height: 14rem;
+    height: 15rem;
   }
   .cardVenta div img {
     padding: 0px;
@@ -133,8 +175,8 @@ footer {
 
 #imagePerfil {
   grid-area: imagePerfil;
-  display: flex;
   flex-direction: column;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -255,6 +297,66 @@ footer {
   background-color: #627C62;
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
+}
+
+.redes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+.redes .fab {
+  padding: 1rem;
+  border: 1px solid;
+  border-radius: 50%;
+}
+.redes > a {
+  text-decoration: none;
+}
+
+.fa-facebook, .fa-whatsapp, .fa-instagram, .fa-twitter {
+  background-color: rgb(71, 71, 255);
+  color: black;
+}
+
+.fa-instagram {
+  background-color: rgb(224, 141, 155);
+  color: black;
+}
+
+.fa-twitter {
+  background-color: rgb(116, 163, 252);
+  color: black;
+}
+
+.fa-whatsapp {
+  background-color: rgb(4, 172, 4);
+  color: black;
+}
+
+.fa-backColor {
+  background-color: black;
+  color: black;
+}
+
+.fa-facebook:hover, .fa-whatsapp:hover, .fa-instagram:hover, .fa-twitter:hover {
+  border: solid 1px black;
+  color: black;
+  transition: all 200ms ease-out;
+  background-color: rgb(11, 11, 211);
+}
+
+.fa-twitter:hover {
+  background-color: rgb(72, 111, 184);
+}
+
+.fa-instagram:hover {
+  background-color: rgb(196, 103, 118);
+}
+
+.fa-whatsapp:hover {
+  background-color: rgb(4, 122, 4);
 }
 
 @media screen and (max-width: 480px) {
@@ -399,11 +501,11 @@ footer {
   background-image: url("https://img.freepik.com/fotos-premium/vista-superior-textura-madera-pino-rojo-madera-natural-fondo_7636-1684.jpg?w=2000");
   background-repeat: no-repeat;
   display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   margin-bottom: 4rem;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 }
 

@@ -32,24 +32,35 @@ body{
     grid-area: main;
 }
 .cardVenta{
-	border:solid;
-	display: flex;
-	height: 12rem;
-    div {
-        img{
-            padding: 0.5rem;
-            width: 8rem;
-            height: 8rem;
-            border:solid;
-            border-radius: 10px;
-            border-color: #78938A;
-        }
-    }
+-webkit-animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both;
+border:solid;
+display: flex;
+height: 12rem;
+	div {
+		img{
+			padding: 0.5rem;
+			width: 8rem;
+			height: 8rem;
+			border:solid;
+			border-radius: 10px;
+			border-color: #78938A;
+		}
+	}
+} 
+
+@for $item from 1 through 4 {
+	.cardVenta:nth-child(#{$item}) {
+		animation-delay: $item*0.3s;
+	}
 }
-.card__img{	
+@-webkit-keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
+@mixin flex-center{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+};
+.card__img{	
+	@include flex-center();
 	margin: 0 1em;
 }
 .card__description{
@@ -60,10 +71,8 @@ body{
     align-items: flex-start;
 }
 .card__compra{
-	display: flex;
+	@include flex-center();
 	flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin-right: 1em;
 }
 .card__price{
@@ -91,18 +100,16 @@ body{
 }
 footer{
 	grid-area: footer;
+	@include flex-center();
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	border: solid;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	background-color: #78938A;
 }
 
 @media screen and (max-width: 480px){
 	.cardVenta{
-		height: 14rem;
+		height: 15rem;
         div{
             img{
                 padding: 0px;
@@ -129,10 +136,8 @@ footer{
 }
 #imagePerfil{
 	grid-area: imagePerfil;
-	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	@include flex-center();
     img{
         margin: 1rem;
         border-radius: 50%;
@@ -169,9 +174,7 @@ footer{
 }
 #micuenta__title{
 	height: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	@include flex-center();
 	padding: 6rem;
 }
 .formPerfil {  
@@ -247,6 +250,58 @@ footer{
         -webkit-transform: translateY(-0.25em);
         transform: translateY(-0.25em)
     }
+}
+.redes{
+	@include flex-center();
+    gap: 1rem;
+	padding-top: 2rem;
+	.fab{
+		padding: 1rem;
+		border: 1px solid;
+		border-radius: 50%;
+	}
+	>a{
+		text-decoration: none;
+	}
+}
+$redes:(
+	facebook: rgb(71, 71, 255),
+	instagram: rgb(224, 141, 155),
+	twitter: rgb(116, 163, 252),
+	whatsapp: rgb(4, 172, 4),
+	backColor: black
+);
+@each $redsocial, $color in $redes{
+	.fa-#{$redsocial}{
+		background-color: $color;
+		color: map-get($redes , backColor);
+	}
+}
+.fa-facebook{
+	&:hover{
+		border: solid 1px black;
+		color: map-get($redes , backColor);
+		transition: all 200ms ease-out;
+		background-color: rgb(11, 11, 211) ;
+	}
+}
+.fa-twitter{
+	@extend .fa-facebook;
+	&:hover{
+	background-color: rgb(72, 111, 184);
+	}
+}
+.fa-instagram{
+	@extend .fa-facebook;
+	&:hover{
+	background-color: rgb(196, 103, 118);
+	}
+}
+.fa-whatsapp{
+	@extend .fa-facebook;
+	&:hover{
+	background-color: rgb(4, 122, 4);
+	}
 }
 @media screen and (max-width: 480px){
 	.formPerfil{
@@ -397,12 +452,10 @@ align-items: center;
 	font-family: roboto; 
 	background-image: url("https://img.freepik.com/fotos-premium/vista-superior-textura-madera-pino-rojo-madera-natural-fondo_7636-1684.jpg?w=2000");
 	background-repeat: no-repeat;
-	display: flex;
+	@include flex-center();
 	height: 100%;
 	margin-bottom: 4rem;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	text-align: center;
 }
 .form {  
