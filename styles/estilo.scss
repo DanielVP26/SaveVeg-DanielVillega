@@ -6,6 +6,7 @@
     box-sizing: content-box;
 }
 body{
+	overflow-x: hidden;
 	background-color: #F2ECE1;
 	line-height: normal;
 }
@@ -25,17 +26,22 @@ body{
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem 1.5rem 0 1.5rem;
-	border:solid;
+	border: 1px solid;
 	background-color: #92BA92;
 }
+.logoInicio{
+		width: 6.5rem;
+		height: 6.5rem;
+	}
 #main{
     grid-area: main;
 }
 .cardVenta{
 -webkit-animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both;
-border:solid;
+border: 1px solid;
 display: flex;
 height: 12rem;
+justify-content: space-between;
 	div {
 		img{
 			padding: 0.5rem;
@@ -98,18 +104,76 @@ height: 12rem;
 	height: 2rem;
 	justify-content: center;
 }
-footer{
+.footer-distributed {
 	grid-area: footer;
-	@include flex-center();
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-	border: solid;
 	background-color: #78938A;
-}
-
+	border: solid 1px;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+	padding: 45px 50px;
+  }
+  
+  .footer-distributed .footer-left p {
+	color: black;
+	font-size: 14px;
+	margin: 0;
+  }
+  .footer-distributed p.footer-links {
+	font-size: 18px;
+	font-weight: bold;
+	color: #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+	transition: ease .25s;
+  }
+  .footer-distributed p.footer-links a {
+	display: inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color: inherit;
+	transition: ease .25s;
+	&:hover{
+		text-decoration:underline;
+	}
+  }
+  .footer-distributed .footer-links a:before {
+	content: "·";
+	font-size: 20px;
+	left: 0;
+	color: #fff;
+	display: inline-block;
+	padding-right: 5px;
+  }
+  .footer-distributed .footer-links .link-1:before {
+	content: none;
+  }
+  .footer-distributed .footer-right {
+	float: right;
+	margin-top: 6px;
+	max-width: 180px;
+  }
+  .footer-distributed .footer-right a {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background-color: #33383b;
+	border-radius: 2px;
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+	margin-left: 3px;
+	transition:all .25s;
+	&:hover{
+	transform:scale(1.1); -webkit-transform:scale(1.1);
+	}
+  }
 @media screen and (max-width: 480px){
 	.cardVenta{
-		height: 15rem;
+		height: auto;
         div{
             img{
                 padding: 0px;
@@ -119,6 +183,16 @@ footer{
 	.card__description{
 		margin-top: 1.4em;
 	}
+	.footer-distributed .footer-left, .footer-distributed .footer-right {
+		text-align: center;
+	  }
+	  .footer-distributed .footer-right {
+		float: none;
+		margin: 0 auto 20px;
+	  }
+	  .footer-distributed .footer-left p.footer-links {
+		line-height: 1.8;
+	  }
 }
 /*PAGINA DE PERFIL*/
 #contenedorPerfil{
@@ -129,10 +203,9 @@ footer{
 	grid-template-areas: 
 	"imagePerfil principalPerfil"
 	"botoneraPerfil principalPerfil";
-	border: 1px solid;
-    >div{
-        border: 1px solid;
-    }
+	>div {
+		border: 1px solid;
+	}
 }
 #imagePerfil{
 	grid-area: imagePerfil;
@@ -251,59 +324,10 @@ footer{
         transform: translateY(-0.25em)
     }
 }
-.redes{
-	@include flex-center();
-    gap: 1rem;
-	padding-top: 2rem;
-	.fab{
-		padding: 1rem;
-		border: 1px solid;
-		border-radius: 50%;
-	}
-	>a{
-		text-decoration: none;
-	}
-}
-$redes:(
-	facebook: rgb(71, 71, 255),
-	instagram: rgb(224, 141, 155),
-	twitter: rgb(116, 163, 252),
-	whatsapp: rgb(4, 172, 4),
-	backColor: black
-);
-@each $redsocial, $color in $redes{
-	.fa-#{$redsocial}{
-		background-color: $color;
-		color: map-get($redes , backColor);
-	}
-}
-.fa-facebook{
-	&:hover{
-		border: solid 1px black;
-		color: map-get($redes , backColor);
-		transition: all 200ms ease-out;
-		background-color: rgb(11, 11, 211) ;
-	}
-}
-.fa-twitter{
-	@extend .fa-facebook;
-	&:hover{
-	background-color: rgb(72, 111, 184);
-	}
-}
-.fa-instagram{
-	@extend .fa-facebook;
-	&:hover{
-	background-color: rgb(196, 103, 118);
-	}
-}
-.fa-whatsapp{
-	@extend .fa-facebook;
-	&:hover{
-	background-color: rgb(4, 122, 4);
-	}
-}
 @media screen and (max-width: 480px){
+	#contenedorPerfil{
+		height: auto;
+	}
 	.formPerfil{
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(5, 1fr);
@@ -352,11 +376,8 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 1rem 1.5rem 0 1.5rem;
-border:solid;
+border: 1px solid;
 background-color: #92BA92;
-}
-.footer{ 
-grid-area: footer;
 }
 .main {
 display: grid; 
@@ -424,6 +445,11 @@ align-items: center;
         }
     }
 }
+@media screen and (max-width: 200px){
+	.headerOfertas{
+		width: min-content;
+	}
+}
 /*PAGINA DE CONTACTO*/
 
 .containerContacto{
@@ -444,7 +470,7 @@ align-items: center;
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem 1.5rem 0 1.5rem;
-	border:solid;
+	border: 1px solid;
 	background-color: #92BA92; 
 }
 .encabezadoContacto{
@@ -512,8 +538,14 @@ align-items: center;
 	grid-area: form;
 	padding: 4rem;
 }
-.footer{
-	grid-area: footer; 
+.maps{
+	@include flex-center();
+	padding-bottom: 4rem;
+
+	iframe{
+		width: 30em;
+		height: 20rem;
+	}
 }
 @media screen and (max-width: 480px){
 	.form{
@@ -532,6 +564,35 @@ align-items: center;
 	}
     .form__input{
 		width: 11rem;
+	}
+}
+@media screen and (max-width: 300px){
+	.form{
+		justify-content: center;
+		>div{
+			>textarea{
+				width: 8rem;
+			}
+			>input{
+				width: 8rem;
+			}
+		}
+	}
+	.maps{
+		iframe{
+			width:15rem;
+			height:15rem;
+		}
+	}
+}
+@media screen and (max-width: 200px){
+	.headerContacto{
+		width: min-content;
+	}
+}
+@media screen and  (max-width: 150px){
+	.maps{
+		display: none;
 	}
 }
 /*PAGINA DE CARRITO*/
@@ -575,6 +636,15 @@ align-items: center;
     td{
 	border-radius: 2px;
 	border-bottom: 2px solid #999;
+	button{
+		font-size: 1em;
+		border-radius: 0.3rem;
+		border:solid 1px;
+		&:hover{
+			font-size: 2.3em;
+			border-color: red;
+		}
+	}
     }
     img{
         margin-top: 0.5rem;
@@ -610,6 +680,7 @@ align-items: center;
             }
         }
 	}
+	
 	td{
         button{
             font-size: 2em;
@@ -621,4 +692,9 @@ align-items: center;
             }
         }
     }
+}
+@media screen and (max-width: 275px){
+	.headerCarrito{
+		width: min-content;
+	}
 }

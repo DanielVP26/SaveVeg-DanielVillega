@@ -14,7 +14,7 @@
 <body>
 <div class="containerContacto">
   <header class="headerContacto">
-  	<a href="../index.html"><img src="../assets/img/favicon.png" width="100" height="100" alt="logo"></a>
+  	<a href="../index.html"><img class="logoInicio" src="../assets/img/favicon.png" alt="logo"></a>
 			<nav class="navbar">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -54,8 +54,11 @@
 		<h2>Ingrese la información requerida</h2>
   </div>
   <div class="formContacto">
+	<div class="maps">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.0501583003906!2d-74.04736!3d4.7612833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bf76e893a5f%3A0x4d6d67ff744f8585!2sCentro%20comercial%20Santa%20Fe!5e0!3m2!1ses-419!2sco!4v1662608615823!5m2!1ses-419!2sco" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
   	<form action="" class="form">
-	  <div class="nombreForm">
+	  <div class="nombreForm">	
 	  	<p>Nombre:</p>
 			<input type="text" id="nombres" class="form__input form-control">
 	  </div>
@@ -79,17 +82,34 @@
 	<div class="buttonForm">
 			<input type="submit" value="Enviar" class="btn">
 	  </div>
-	<div class="redes">
-	<a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook"></a>
-	<a href="https://instagram.com/" target="_blank" class="fab fa-instagram"></a>
-	<a href="https://twitter.com/" target="_blank" class="fab fa-twitter"></a>
-	<a href="https://whatsapp.com/" target="_blank" class="fab fa-whatsapp"></a>
 </div>
-</div>
- 
-	<footer>
-		<b><i>¡Muchas gracias por visitarnos, vuelva pronto!</i></b>
-	</footer>
+<footer class="footer-distributed">
+
+	<div class="footer-right">
+
+	  <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+	  <a href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+	  <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+	  <a href="https://whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+
+	</div>
+
+	<div class="footer-left">
+
+	  <p class="footer-links">
+		<a class="link-1" href="../index.html">Inicio</a>
+
+		<a href="./perfil.html">Mi perfil</a>
+
+		<a href="./carrito.html">Carrito de compras</a>
+
+		<a href="./ofertas.html">Ofertas</a>
+	  </p>
+
+	  <p>SaveVeg &copy; 2022</p>
+	</div>
+
+  </footer>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

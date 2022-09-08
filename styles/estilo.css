@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 * {
   font-family: roboto;
@@ -7,6 +8,7 @@
 }
 
 body {
+  overflow-x: hidden;
   background-color: #F2ECE1;
   line-height: normal;
 }
@@ -25,8 +27,13 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem 0 1.5rem;
-  border: solid;
+  border: 1px solid;
   background-color: #92BA92;
+}
+
+.logoInicio {
+  width: 6.5rem;
+  height: 6.5rem;
 }
 
 #main {
@@ -36,9 +43,10 @@ body {
 .cardVenta {
   -webkit-animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  border: solid;
+  border: 1px solid;
   display: flex;
   height: 12rem;
+  justify-content: space-between;
 }
 .cardVenta div img {
   padding: 0.5rem;
@@ -138,26 +146,100 @@ body {
   justify-content: center;
 }
 
-footer {
+.footer-distributed {
   grid-area: footer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border: solid;
   background-color: #78938A;
+  border: solid 1px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 45px 50px;
+}
+
+.footer-distributed .footer-left p {
+  color: black;
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease 0.25s;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease 0.25s;
+}
+.footer-distributed p.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition: all 0.25s;
+}
+.footer-distributed .footer-right a:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 }
 
 @media screen and (max-width: 480px) {
   .cardVenta {
-    height: 15rem;
+    height: auto;
   }
   .cardVenta div img {
     padding: 0px;
   }
   .card__description {
     margin-top: 1.4em;
+  }
+  .footer-distributed .footer-left, .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
   }
 }
 /*PAGINA DE PERFIL*/
@@ -167,7 +249,6 @@ footer {
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "imagePerfil principalPerfil" "botoneraPerfil principalPerfil";
-  border: 1px solid;
 }
 #contenedorPerfil > div {
   border: 1px solid;
@@ -299,67 +380,10 @@ footer {
   transform: translateY(-0.25em);
 }
 
-.redes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding-top: 2rem;
-}
-.redes .fab {
-  padding: 1rem;
-  border: 1px solid;
-  border-radius: 50%;
-}
-.redes > a {
-  text-decoration: none;
-}
-
-.fa-facebook, .fa-whatsapp, .fa-instagram, .fa-twitter {
-  background-color: rgb(71, 71, 255);
-  color: black;
-}
-
-.fa-instagram {
-  background-color: rgb(224, 141, 155);
-  color: black;
-}
-
-.fa-twitter {
-  background-color: rgb(116, 163, 252);
-  color: black;
-}
-
-.fa-whatsapp {
-  background-color: rgb(4, 172, 4);
-  color: black;
-}
-
-.fa-backColor {
-  background-color: black;
-  color: black;
-}
-
-.fa-facebook:hover, .fa-whatsapp:hover, .fa-instagram:hover, .fa-twitter:hover {
-  border: solid 1px black;
-  color: black;
-  transition: all 200ms ease-out;
-  background-color: rgb(11, 11, 211);
-}
-
-.fa-twitter:hover {
-  background-color: rgb(72, 111, 184);
-}
-
-.fa-instagram:hover {
-  background-color: rgb(196, 103, 118);
-}
-
-.fa-whatsapp:hover {
-  background-color: rgb(4, 122, 4);
-}
-
 @media screen and (max-width: 480px) {
+  #contenedorPerfil {
+    height: auto;
+  }
   .formPerfil {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
@@ -404,12 +428,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem 0 1.5rem;
-  border: solid;
+  border: 1px solid;
   background-color: #92BA92;
-}
-
-.footer {
-  grid-area: footer;
 }
 
 .main {
@@ -475,6 +495,13 @@ footer {
     margin-bottom: 1rem;
   }
 }
+@media screen and (max-width: 200px) {
+  .headerOfertas {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+  }
+}
 /*PAGINA DE CONTACTO*/
 .containerContacto {
   display: grid;
@@ -491,7 +518,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem 0 1.5rem;
-  border: solid;
+  border: 1px solid;
   background-color: #92BA92;
 }
 
@@ -563,8 +590,15 @@ footer {
   padding: 4rem;
 }
 
-.footer {
-  grid-area: footer;
+.maps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4rem;
+}
+.maps iframe {
+  width: 30em;
+  height: 20rem;
 }
 
 @media screen and (max-width: 480px) {
@@ -579,6 +613,33 @@ footer {
   }
   .form__input {
     width: 11rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .form {
+    justify-content: center;
+  }
+  .form > div > textarea {
+    width: 8rem;
+  }
+  .form > div > input {
+    width: 8rem;
+  }
+  .maps iframe {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+@media screen and (max-width: 200px) {
+  .headerContacto {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+  }
+}
+@media screen and (max-width: 150px) {
+  .maps {
+    display: none;
   }
 }
 /*PAGINA DE CARRITO*/
@@ -621,6 +682,15 @@ footer {
 .mainCarrito td {
   border-radius: 2px;
   border-bottom: 2px solid #999;
+}
+.mainCarrito td button {
+  font-size: 1em;
+  border-radius: 0.3rem;
+  border: solid 1px;
+}
+.mainCarrito td button:hover {
+  font-size: 2.3em;
+  border-color: red;
 }
 .mainCarrito img {
   margin-top: 0.5rem;
@@ -665,5 +735,12 @@ footer {
   td button:hover {
     font-size: 2.3em;
     border-color: red;
+  }
+}
+@media screen and (max-width: 275px) {
+  .headerCarrito {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
   }
 }/*# sourceMappingURL=estilo.css.map */
