@@ -1,23 +1,57 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap");
 * {
-  font-family: roboto;
   padding: 0px;
   margin: 0px;
   box-sizing: content-box;
 }
 
 body {
+  font-family: roboto;
   overflow-x: hidden;
   background-color: #F2ECE1;
-  line-height: normal;
+}
+
+.navbar-toggler {
+  padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+  font-size: var(--bs-navbar-toggler-font-size);
+  line-height: 1;
+  color: var(--bs-navbar-color);
+  background-color: transparent;
+  border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
+  border-radius: var(--bs-navbar-toggler-border-radius);
+  transition: var(--bs-navbar-toggler-transition);
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-image: var(--bs-navbar-toggler-icon-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.form-control {
+  height: auto;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 #container {
   display: grid;
-  height: 100vh;
+  min-height: 100vh;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
   grid-template-areas: "header" "main" "footer";
 }
 
@@ -27,7 +61,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem 0 1.5rem;
-  border: 1px solid;
+  border-top: 1px solid;
   background-color: #92BA92;
 }
 
@@ -40,41 +74,82 @@ body {
   grid-area: main;
 }
 
-.cardVenta {
-  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  border: 1px solid;
-  display: flex;
-  height: 12rem;
-  justify-content: space-between;
-}
-.cardVenta div img {
-  padding: 0.5rem;
-  width: 8rem;
-  height: 8rem;
-  border: solid;
-  border-radius: 10px;
-  border-color: #78938A;
+.containerP {
+  margin: 1rem;
+  background-color: #F2ECE1;
 }
 
-.cardVenta:nth-child(1) {
+.banner {
+  display: flex !important;
+  justify-content: center;
+  gap: 8em;
+  align-items: center;
+  height: 14rem;
+  border-top: 1px solid;
+  background-color: #f4fab1;
+}
+.banner .bannerText {
+  width: 18rem;
+}
+.banner .bannerText h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.5rem;
+  color: #cc3e3e;
+}
+.banner .bannerText .fraseBanner {
+  text-align: start;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #2a3a16;
+  font-size: 1rem;
+}
+.banner .bannerText .autorBanner {
+  font-size: 0.8rem;
+}
+.banner .bannerImg {
+  display: block;
+}
+.banner .bannerImg img {
+  margin-left: 1rem;
+  height: 11em;
+  width: 12em;
+}
+
+.fa {
+  color: #FF9529;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.card {
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.card:nth-child(1) {
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
 
-.cardVenta:nth-child(2) {
+.card:nth-child(2) {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
 
-.cardVenta:nth-child(3) {
+.card:nth-child(3) {
   -webkit-animation-delay: 0.9s;
           animation-delay: 0.9s;
 }
 
-.cardVenta:nth-child(4) {
+.card:nth-child(4) {
   -webkit-animation-delay: 1.2s;
           animation-delay: 1.2s;
+}
+
+.card:nth-child(5) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
 }
 
 @-webkit-keyframes slide-in-left {
@@ -97,40 +172,13 @@ body {
     opacity: 1;
   }
 }
-.card__img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 1em;
-}
-
-.card__description {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-  margin-right: 1em;
-  align-items: flex-start;
-}
-
-.card__compra {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-right: 1em;
-}
-
-.card__price {
-  padding-bottom: 3rem;
-  font-weight: bolder;
-  font-style: italic;
-}
-
 .botonAnim {
   font-size: 0.8rem;
   padding: 0.5em 1.2em;
   background: rgba(0, 0, 0, 0);
   border: 2px solid;
+  display: flex;
+  justify-content: center;
   border-color: #92BA92;
   transition: all 1s ease;
   position: relative;
@@ -138,12 +186,6 @@ body {
 .botonAnim:hover {
   background: #92BA92;
   color: #fff !important;
-}
-
-.card__action {
-  width: 4rem;
-  height: 2rem;
-  justify-content: center;
 }
 
 .footer-distributed {
@@ -221,15 +263,21 @@ body {
   -webkit-transform: scale(1.1);
 }
 
+@media screen and (min-width: 1440px) {
+  .headerGeneral {
+    justify-content: space-around;
+  }
+}
 @media screen and (max-width: 480px) {
-  .cardVenta {
-    height: auto;
+  .carousel-inner {
+    text-align: center;
   }
-  .cardVenta div img {
-    padding: 0px;
+  .banner {
+    flex-direction: column;
+    gap: 0;
   }
-  .card__description {
-    margin-top: 1.4em;
+  .banner .bannerImg {
+    display: none;
   }
   .footer-distributed .footer-left, .footer-distributed .footer-right {
     text-align: center;
@@ -245,9 +293,8 @@ body {
 /*PAGINA DE PERFIL*/
 #contenedorPerfil {
   display: grid;
-  height: 100vh;
+  min-height: 100vh;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 1fr;
   grid-template-areas: "imagePerfil principalPerfil" "botoneraPerfil principalPerfil";
 }
 #contenedorPerfil > div {
@@ -287,6 +334,7 @@ body {
   border-color: gray;
   border-radius: 5px;
   font-size: 1rem;
+  transition: all 0.2s ease-in-out;
 }
 .botoneraPerfil__button:hover {
   font-size: 1.5rem;
@@ -300,7 +348,6 @@ body {
 }
 
 #micuenta__title {
-  height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -363,27 +410,7 @@ body {
   border-color: #9FCF9F;
 }
 
-.btn {
-  display: flex;
-  margin: 0 auto;
-  border-radius: 5px;
-  padding: 0.5rem;
-  text-decoration: none;
-  text-shadow: 0 1px 0;
-  box-shadow: 0 1px 1px #799C79;
-  color: white;
-  background-color: #799C79;
-}
-.btn:hover {
-  background-color: #627C62;
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
-}
-
 @media screen and (max-width: 480px) {
-  #contenedorPerfil {
-    height: auto;
-  }
   .formPerfil {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
@@ -402,6 +429,9 @@ body {
 #micuenta__title {
   padding: 0;
 }
+#micuenta__title h2 {
+  font-family: "Poppins", sans-serif;
+}
 
 .buttonForm {
   margin: 2rem;
@@ -414,9 +444,8 @@ body {
 /*PAGINA DE OFERTAS*/
 .containerOfertas {
   display: grid;
-  height: 100vh;
+  min-height: 100vh;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
   gap: 5px 0px;
   grid-auto-flow: row;
   grid-template-areas: "headerOfertas headerOfertas headerOfertas" "main main main" "footer footer footer";
@@ -434,10 +463,9 @@ body {
 
 .main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.4fr 2fr 0.9fr;
+  margin: 2rem 0;
   gap: 10px 0px;
-  grid-template-areas: ". . . . ." ". ofertaEncabezado ofertaEncabezado ofertaEncabezado ." ". ofertas ofertas ofertas .";
+  grid-template-areas: "ofertaEncabezado ofertaEncabezado ofertaEncabezado" " ofertas ofertas ofertas";
   grid-area: main;
 }
 
@@ -449,10 +477,10 @@ body {
 }
 
 #content__encabezado {
-  width: 99%;
   text-align: center;
   background-color: #b92c2c;
   border: solid;
+  width: min(45rem, 100%);
 }
 
 #content__main {
@@ -463,36 +491,30 @@ body {
 .ofertas {
   grid-area: ofertas;
   display: flex;
-  margin-top: 3rem;
+  margin: 3rem 0;
   justify-content: space-evenly;
   align-items: center;
 }
-.ofertas div img {
-  border: 3px solid;
-  border-radius: 5px;
-  border-color: #999;
-  width: 8rem;
-  height: 8rem;
-  padding: 1em;
+
+.anim {
+  transition: all 0.3s ease-in-out;
+}
+.anim:hover {
+  transform: scale(1.1);
+  margin-inline: 3rem;
 }
 
 @media screen and (max-width: 480px) {
+  .anim {
+    pointer-events: none;
+  }
   .main {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.1fr 0.8fr 0.4fr;
     gap: 2em 0px;
     grid-template-areas: ". . . " "ofertaEncabezado ofertaEncabezado ofertaEncabezado" "ofertas ofertas ofertas";
   }
   .ofertaEncabezado {
     justify-content: center;
-  }
-  .ofertas {
-    flex-direction: column;
-    margin-left: 3rem;
-    margin-top: 0;
-  }
-  .ofertas div {
-    margin-bottom: 1rem;
   }
 }
 @media screen and (max-width: 200px) {
@@ -505,10 +527,8 @@ body {
 /*PAGINA DE CONTACTO*/
 .containerContacto {
   display: grid;
-  height: 100vh;
-  grid-auto-rows: 1fr;
+  min-height: 100vh;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1.5fr 2fr 1fr;
   grid-template-areas: "headerContacto headerContacto headerContacto" "encabezado encabezado encabezado" "form form form" "footer footer footer";
 }
 
@@ -526,7 +546,6 @@ body {
   grid-area: encabezado;
   font-family: roboto;
   background-image: url("https://img.freepik.com/fotos-premium/vista-superior-textura-madera-pino-rojo-madera-natural-fondo_7636-1684.jpg?w=2000");
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -534,6 +553,17 @@ body {
   margin-bottom: 4rem;
   flex-direction: column;
   text-align: center;
+}
+
+.horario {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  line-height: 0.5em;
+  padding: 2rem;
+}
+.horario > div {
+  text-align: start;
 }
 
 .form {
@@ -576,6 +606,8 @@ body {
 
 .buttonForm {
   margin-top: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
 .form__input {
@@ -601,6 +633,13 @@ body {
   height: 20rem;
 }
 
+@media screen and (max-width: 800px) {
+  .horario {
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+  }
+}
 @media screen and (max-width: 480px) {
   .form {
     grid-template-columns: 1fr;
@@ -645,12 +684,7 @@ body {
 /*PAGINA DE CARRITO*/
 .containerGeneral {
   display: grid;
-  height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-auto-rows: 1fr;
   gap: 0px 0px;
-  grid-auto-flow: row;
   grid-template-areas: "headerCarrito headerCarrito headerCarrito" "mainCarrito mainCarrito mainCarrito" ". . pagarCarrito";
 }
 
@@ -665,76 +699,41 @@ body {
   border-radius: 1em;
 }
 
-.mainCarrito {
-  grid-area: mainCarrito;
-  text-align: center;
-  margin-right: 2.3rem;
-  margin-left: 2.3rem;
-}
-.mainCarrito table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.mainCarrito th {
-  border-radius: 2px;
-  border-bottom: 2px solid #999;
-}
-.mainCarrito td {
-  border-radius: 2px;
-  border-bottom: 2px solid #999;
-}
-.mainCarrito td button {
-  font-size: 1em;
-  border-radius: 0.3rem;
-  border: solid 1px;
-}
-.mainCarrito td button:hover {
-  font-size: 2.3em;
-  border-color: red;
-}
-.mainCarrito img {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+.noPadding {
+  padding-right: 0;
+  padding-left: 0;
 }
 
-.pagarCarrito {
-  grid-area: pagarCarrito;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 2rem;
+.repairRow {
+  margin: 0;
 }
-.pagarCarrito button {
-  width: 5rem;
-  height: 2rem;
-  background-color: #D9F8DA;
+.repairRow * {
+  padding: 0;
+  margin: 0;
 }
-.pagarCarrito button:hover {
-  width: 5.3rem;
-  height: 2.3rem;
-  background-color: #C9E7CA;
+
+.repairRow2 {
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0;
+}
+.repairRow2 > * {
+  padding: 0;
+  margin: 0;
+}
+
+.btnRepair {
+  min-width: -webkit-fill-available;
+  min-height: 3rem;
+}
+
+.mainCarrito {
+  grid-area: mainCarrito;
 }
 
 @media screen and (max-width: 480px) {
   .mainCarrito {
     margin: 0;
-  }
-  .mainCarrito table {
-    display: block;
-    overflow: auto;
-  }
-  .mainCarrito table th {
-    padding: 0 3rem;
-  }
-  td button {
-    font-size: 2em;
-    border-radius: 0.3rem;
-    border: solid 1px;
-  }
-  td button:hover {
-    font-size: 2.3em;
-    border-color: red;
   }
 }
 @media screen and (max-width: 275px) {
